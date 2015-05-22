@@ -1,5 +1,5 @@
 package br.edu.utfpr.gp.calcadastro.servlet;
 
-public class CadastroServlet {
+public class CadastroService {
 
 }
