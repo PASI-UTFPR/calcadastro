@@ -43,7 +43,7 @@ public class CalcFunction {
 		waitTime(time);
 	}
 	
-	   //Teste Positivo para a ação soma
+	   //Teste Positivo para a ação subtração
 		@Test
 		public void testMinusSuccess(){
 			
@@ -60,7 +60,25 @@ public class CalcFunction {
 			assertEquals("Resultado correto!", getDriver().findElement(By.id("message")).getText());
 			waitTime(time);
 		}
-	
+		
+		//Teste Positivo para a ação multiplicação
+		@Test
+		public void testMultiplySuccess(){
+			
+			String n1, n2;
+			//Resupera valores
+			n1 = getDriver().findElement(By.id("number1")).getText();
+			n2 = getDriver().findElement(By.id("number2")).getText();
+			
+			//Soma valores
+			getNewWebElement("result").sendKeys(String.valueOf(Integer.valueOf(n1)*Integer.valueOf(n2)));
+			getDriver().findElement(By.id("sum")).click();
+			
+			//Span de feedback do resultado
+			assertEquals("Resultado correto!", getDriver().findElement(By.id("message")).getText());
+			waitTime(time);
+		}
+
 	
 	private WebDriver getDriver(){
 		return this.driver;
