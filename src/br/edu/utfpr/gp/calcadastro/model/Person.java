@@ -2,7 +2,7 @@ package br.edu.utfpr.gp.calcadastro.model;
 
 
 
-public class Pessoa {
+public class Person {
 	
 	
 	public String name;
