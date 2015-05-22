@@ -5,7 +5,7 @@
       <h2 class="form-signin-heading text-center">Calcadastro</h2>
       <div class="card-s card-signin">
         <img class="img-circle profile-img" src="../img/calc.png" alt="">
-        <form class="form-signin" action="br/utfpr/gp/calcadastro/controller/Calculator.java" method="post">
+        <form class="form-signin" action="CalculatorServlet" method="post">
           <div class="form-control-wrapper">
           <div class="form-group">
     		<input class="form-control" id="number1" placeholder="Número" type="text" name="number1">
