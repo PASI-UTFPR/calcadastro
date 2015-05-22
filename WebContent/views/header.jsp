@@ -48,8 +48,5 @@
             <li><a href="list.jsp"><span class="glyphicon mdi-action-assignment"> </span> Listagem</a></li>
             <li><a href="calc.jsp"><span class="glyphicon mdi-action-credit-card"></span> Calculadora</a></li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="javascript:void(0)"><span class="glyphicon mdi-action-exit-to-app"></span> Sair</a></li>
-        </ul>
     </div>
 </div>
