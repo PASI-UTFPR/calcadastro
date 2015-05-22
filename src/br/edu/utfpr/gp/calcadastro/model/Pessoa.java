@@ -1,6 +1,6 @@
 package br.edu.utfpr.gp.calcadastro.model;
 
-package Cadastro;
+
 
 public class Pessoa {
 	
