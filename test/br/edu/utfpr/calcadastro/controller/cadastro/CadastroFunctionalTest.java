@@ -18,7 +18,7 @@ public class CadastroFunctionalTest {
 	@Before
 	public void setup() throws Exception {
 		driver = new FirefoxDriver();
-		baseUrl = "http://localhost:8080/Calcadastro/";		
+		baseUrl = "http://localhost:8080/Calcadastro/cadastro";		
 	}
 	
 	@Test
