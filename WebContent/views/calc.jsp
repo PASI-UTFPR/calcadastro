@@ -16,6 +16,10 @@
 		</div>
 		
 		<div class="form-group">
+    		<input class="form-control" id="result" placeholder="Resultado"  type="text" name="result">
+		</div>
+		
+		<div class="form-group">
             <label class="col-lg-2 control-label">Opração</label>
             
                 <div class="radio radio-primary">
