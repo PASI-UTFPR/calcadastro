@@ -2,7 +2,7 @@ package br.edu.utfpr.gp.calcadastro.controller;
 
 public class Calculator {
 	
-	public String solve(String number1, String number2, String operation) throws Exception, UnsupportedOperationException{
+	public static String solve(String number1, String number2, String operation) throws Exception, UnsupportedOperationException{
 		switch (operation) {
 			case "+":
 				return sum(number1, number2);
@@ -17,7 +17,7 @@ public class Calculator {
 		}
 	}
 
-	private String sum(String number1, String number2) throws Exception {
+	private static String sum(String number1, String number2) throws Exception {
 		try {
 			return String.valueOf(Integer.parseInt(number1) + Integer.parseInt(number2));
 		} catch (Exception e) {
@@ -25,7 +25,7 @@ public class Calculator {
 		}
 	}
 
-	private String dim(String number1, String number2) throws Exception {
+	private static String dim(String number1, String number2) throws Exception {
 		try {
 			return String.valueOf(Integer.parseInt(number1) - Integer.parseInt(number2));
 		} catch (Exception e) {
@@ -33,7 +33,7 @@ public class Calculator {
 		}
 	}
 
-	private String div(String number1, String number2) throws Exception {
+	private static String div(String number1, String number2) throws Exception {
 		try {
 			return String.valueOf(Integer.parseInt(number1) / Integer.parseInt(number2));
 		} catch (Exception e) {
@@ -41,7 +41,7 @@ public class Calculator {
 		}
 	}
 
-	private String multiply(String number1, String number2) throws Exception {
+	private static String multiply(String number1, String number2) throws Exception {
 		try {
 			return String.valueOf(Integer.parseInt(number1) * Integer.parseInt(number2));
 		} catch (Exception e) {
