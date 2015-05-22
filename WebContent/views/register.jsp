@@ -11,10 +11,10 @@
 		</div>
 		
 		<div class="form-group">
-    		<input class="form-control" id="age" placeholder="Senha"  type="text" name="age">
+    		<input class="form-control" id="age" placeholder="Idade"  type="text" name="age">
 		</div>
 		<div class="form-group">
-    		<input class="form-control" id="like" placeholder="Senha"  type="text" name="like">
+    		<input class="form-control" id="like" placeholder="Gostou?"  type="text" name="like">
 		</div>
           <div class="form-group">
           <button class="btn btn-lg btn-primary btn-block" type="reset">Limpar</button>
