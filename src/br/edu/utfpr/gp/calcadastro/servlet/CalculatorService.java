@@ -32,9 +32,8 @@ public class CalculatorService extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			String result = Calculator.solve(request.getParameter("number1"), request.getParameter("number2"), request.getParameter("operation"));
-			HttpSession session = request.getSession(false);
-			request.setAttribute("message", "Hello world");
-			response.forward(request, response);
+			request.setAttribute("result", result);
+			response.sendRedirect("/calc.jsp");
 		} catch (UnsupportedOperationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
