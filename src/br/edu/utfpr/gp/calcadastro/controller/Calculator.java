@@ -2,47 +2,50 @@ package br.edu.utfpr.gp.calcadastro.controller;
 
 public class Calculator {
 	
-	public Calculator(String number1, String number2, String operation){
+	public String solve(String number1, String number2, String operation) throws Exception, UnsupportedOperationException{
 		switch (operation) {
-		case "+":
-			return sum(number1, number2);
-			break;
-		
-		case "-":
-			return dim(number1, number2);
-			break;
-			
-		case ("/"):
-			return div(number1, number2);
-			break;
-			
-		case ("*"):
-			return multiply(number1, number2);
-			break;
-
-		default:
-			break;
+			case "+":
+				return sum(number1, number2);
+			case "-":
+				return dim(number1, number2);
+			case ("/"):
+				return div(number1, number2);
+			case ("*"):
+				return multiply(number1, number2);
+			default:
+				throw new UnsupportedOperationException("Operation " + operation + " unknown.");
 		}
 	}
 
-	private Object multiply(String number1, String number2) {
-		// TODO Auto-generated method stub
-		return null;
+	private String sum(String number1, String number2) throws Exception {
+		try {
+			return String.valueOf(Integer.parseInt(number1) + Integer.parseInt(number2));
+		} catch (Exception e) {
+			throw new Exception(e);
+		}
 	}
 
-	private Object div(String number1, String number2) {
-		// TODO Auto-generated method stub
-		return null;
+	private String dim(String number1, String number2) throws Exception {
+		try {
+			return String.valueOf(Integer.parseInt(number1) - Integer.parseInt(number2));
+		} catch (Exception e) {
+			throw new Exception(e);
+		}
 	}
 
-	private Object dim(String number1, String number2) {
-		// TODO Auto-generated method stub
-		return null;
+	private String div(String number1, String number2) throws Exception {
+		try {
+			return String.valueOf(Integer.parseInt(number1) / Integer.parseInt(number2));
+		} catch (Exception e) {
+			throw new Exception(e);
+		}
 	}
 
-	private Object sum(String number1, String number2) {
-		// TODO Auto-generated method stub
-		return null;
+	private String multiply(String number1, String number2) throws Exception {
+		try {
+			return String.valueOf(Integer.parseInt(number1) * Integer.parseInt(number2));
+		} catch (Exception e) {
+			throw new Exception(e);
+		}
 	}
-
 }
