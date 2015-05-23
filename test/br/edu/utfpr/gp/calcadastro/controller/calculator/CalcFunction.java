@@ -9,6 +9,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.junit.*;
 
+import com.thoughtworks.selenium.webdriven.commands.GetText;
+
 public class CalcFunction {
 
 	private WebDriver driver;
@@ -17,10 +19,9 @@ public class CalcFunction {
 	@Before
 	public void setup() {
 		// Entra na home do sistema
-		newInstanceWebDriver(new FirefoxDriver(),
-				"http://localhost:8080/calcadatro");
-
+		newInstanceWebDriver(new FirefoxDriver(), "http://localhost:8080/calcacadstro");
 	}
+	
 
 	// Teste Positivo para a ação soma
 	@Test
@@ -29,19 +30,24 @@ public class CalcFunction {
 		// Botão calculator clicado (Redireciona para a calculadora)
 		getDriver().findElement(By.id("calculator")).click();
 
-		String n1, n2;
+		double n1 = 25, n2 = 25, resultExpected;
+		String result;
+		
 		// Resupera valores
-		n1 = getDriver().findElement(By.id("number1")).getText();
-		n2 = getDriver().findElement(By.id("number2")).getText();
-
-		// Soma valores
-		getNewWebElement("result").sendKeys(
-				String.valueOf(Integer.valueOf(n1) + Integer.valueOf(n2)));
+		getDriver().findElement(By.id("number1")).sendKeys(String.valueOf(n1));
+		getDriver().findElement(By.id("number2")).sendKeys(String.valueOf(n2));
+				
 		getDriver().findElement(By.id("sum")).click();
+		
+		resultExpected = n1 + n2;
+		
+		// Soma valores
+		result = getDriver().findElement(By.id("result")).getText();
+		
+		//Asset esperado para o resultado
+		assertEquals(String.valueOf(resultExpected), result);
+		
 
-		// Span de feedback do resultado
-		assertEquals("Resultado correto!",
-				getDriver().findElement(By.id("message")).getText());
 		waitTime(time);
 	}
 
@@ -49,61 +55,101 @@ public class CalcFunction {
 	@Test
 	public void testMinusSuccess() {
 
-		String n1, n2;
+		double n1 = 50, n2 = 25, resultExpected;
+		String result;
+		
 		// Resupera valores
-		n1 = getDriver().findElement(By.id("number1")).getText();
-		n2 = getDriver().findElement(By.id("number2")).getText();
-
-		// Soma valores
-		getNewWebElement("result").sendKeys(
-				String.valueOf(Integer.valueOf(n1) - Integer.valueOf(n2)));
+		getDriver().findElement(By.id("number1")).sendKeys(String.valueOf(n1));
+		getDriver().findElement(By.id("number2")).sendKeys(String.valueOf(n2));
+				
 		getDriver().findElement(By.id("sum")).click();
+		
+		resultExpected = n1 - n2;
+		
+		// Soma valores
+		result = getDriver().findElement(By.id("result")).getText();
+		
+		//Asset esperado para o resultado
+		assertEquals(String.valueOf(resultExpected), result);
+		
 
-		// Span de feedback do resultado
-		assertEquals("Resultado correto!",
-				getDriver().findElement(By.id("message")).getText());
 		waitTime(time);
+
 	}
 
 	// Teste Positivo para a ação multiplicação
 	@Test
 	public void testMultiplySuccess() {
 
-		String n1, n2;
+		double n1 = 2, n2 = 25, resultExpected;
+		String result;
+		
 		// Resupera valores
-		n1 = getDriver().findElement(By.id("number1")).getText();
-		n2 = getDriver().findElement(By.id("number2")).getText();
-
-		// Soma valores
-		getNewWebElement("result").sendKeys(
-				String.valueOf(Integer.valueOf(n1) * Integer.valueOf(n2)));
+		getDriver().findElement(By.id("number1")).sendKeys(String.valueOf(n1));
+		getDriver().findElement(By.id("number2")).sendKeys(String.valueOf(n2));
+				
 		getDriver().findElement(By.id("sum")).click();
+		
+		resultExpected = n1 * n2;
+		
+		// Soma valores
+		result = getDriver().findElement(By.id("result")).getText();
+		
+		//Asset esperado para o resultado
+		assertEquals(String.valueOf(resultExpected), result);
+		
 
-		// Span de feedback do resultado
-		assertEquals("Resultado correto!",
-				getDriver().findElement(By.id("message")).getText());
 		waitTime(time);
+
 	}
 
 	// Teste Positivo para a ação divide
 	@Test
 	public void testDivideSuccess() {
 
-		String n1, n2;
+		double n1 = 30, n2 = 2, resultExpected;
+		String result;
+		
 		// Resupera valores
-		n1 = getDriver().findElement(By.id("number1")).getText();
-		n2 = getDriver().findElement(By.id("number2")).getText();
-
-		// Soma valores
-		getNewWebElement("result").sendKeys(
-				String.valueOf(Integer.valueOf(n1) / Integer.valueOf(n2)));
+		getDriver().findElement(By.id("number1")).sendKeys(String.valueOf(n1));
+		getDriver().findElement(By.id("number2")).sendKeys(String.valueOf(n2));
+				
 		getDriver().findElement(By.id("sum")).click();
+		
+		resultExpected = n1 / n2;
+		
+		// Soma valores
+		result = getDriver().findElement(By.id("result")).getText();
+		
+		//Asset esperado para o resultado
+		assertEquals(String.valueOf(resultExpected), result);
+		
 
-		// Span de feedback do resultado
-		assertEquals("Resultado correto!",
-				getDriver().findElement(By.id("message")).getText());
 		waitTime(time);
 	}
+	
+	// Teste Positivo para a ação divide por zero
+	@Test
+	public void testDivideByZero(){
+		
+		double n1 = 25, n2 = 0, resultExpected;
+		String message_error;
+		
+		// Resupera valores
+		getDriver().findElement(By.id("number1")).sendKeys(String.valueOf(n1));
+		getDriver().findElement(By.id("number2")).sendKeys(String.valueOf(n2));
+				
+		getDriver().findElement(By.id("sum")).click();
+		
+		message_error = getDriver().findElement(By.id("message")).getText();
+		
+		// Span de feedback do resultado
+		assertEquals("Impossível dividir por zero", message_error);
+		
+		waitTime(time);
+		
+	}
+
 
 	private WebDriver getDriver() {
 		return this.driver;
