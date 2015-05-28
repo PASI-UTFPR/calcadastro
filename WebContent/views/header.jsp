@@ -8,25 +8,25 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../img/calc.png">
+    <link rel="icon" href="<%= request.getContextPath() %>/img/calc.png">
 
     <title>CalCadastro</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%= request.getContextPath() %>/css/bootstrap.min.css" rel="stylesheet">
     
-    <link href="../css/material-fullpalette.min.css" rel="stylesheet">
+    <link href="<%= request.getContextPath() %>/css/material-fullpalette.min.css" rel="stylesheet">
 		
-    <link href="../css/roboto.min.css" rel="stylesheet">
+    <link href="<%= request.getContextPath() %>/css/roboto.min.css" rel="stylesheet">
 	
-	<link href="../css/ripples.min.css" rel="stylesheet">
+	<link href="<%= request.getContextPath() %>/css/ripples.min.css" rel="stylesheet">
 	
-    <link href="../css/material.min.css" rel="stylesheet">
+    <link href="<%= request.getContextPath() %>/css/material.min.css" rel="stylesheet">
     
     <!-- Custom styles for this template -->
-    <link href="../css/signin.css" rel="stylesheet">
+    <link href="<%= request.getContextPath() %>/css/signin.css" rel="stylesheet">
     
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="<%= request.getContextPath() %>/css/style.css" rel="stylesheet">
 
   </head>
 
@@ -43,10 +43,10 @@
     </div>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav">
-            <li><a href="index.jsp"> <span class="glyphicon mdi-action-home"></span> Inicio</a></li>
-            <li><a href="register.jsp"><span class="glyphicon mdi-action-assignment-ind"></span> Cadastro</a></li>
-            <li><a href="list.jsp"><span class="glyphicon mdi-action-assignment"> </span> Listagem</a></li>
-            <li><a href="calc.jsp"><span class="glyphicon mdi-action-credit-card"></span> Calculadora</a></li>
+            <li><a href="<%= request.getContextPath() %>/index.jsp"> <span class="glyphicon mdi-action-home"></span> Inicio</a></li>
+            <li><a href="<%= request.getContextPath() %>/cadastro"><span class="glyphicon mdi-action-assignment-ind"></span> Cadastro</a></li>
+            <li><a href="<%= request.getContextPath() %>/listagem"><span class="glyphicon mdi-action-assignment"> </span> Listagem</a></li>
+            <li><a href="<%= request.getContextPath() %>/calculadora"><span class="glyphicon mdi-action-credit-card"></span> Calculadora</a></li>
         </ul>
     </div>
 </div>

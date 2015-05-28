@@ -10,6 +10,11 @@ public class Person {
 	public String like;
 	
 	
+	public Person(String name, Integer age, String like) {
+		this.name = name;
+		this.age = age;
+		this.like = like;
+	}
 	public String getName() {
 		return name;
 	}
@@ -29,6 +34,4 @@ public class Person {
 		this.like = like;
 	}
 	
-	
-
 }
